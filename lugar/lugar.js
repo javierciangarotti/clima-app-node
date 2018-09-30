@@ -2,7 +2,7 @@ const axios = require('axios');
 
 let getLatLong = async(direccion) => {
   let encodeUrl = encodeURI(direccion);
-  let resp = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeUrl}&key=AIzaSyCVhXKGrJmL2_qyPN8ahzOJcX4oPalnm30`);
+  let resp = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeUrl}&key=${apikey}`);
 
   if(resp.data.status === 'ZERO_RESULTS'){
     throw new Error(`No hay resultados para la dirección ${direccion}`);
